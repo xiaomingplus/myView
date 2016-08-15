@@ -60,6 +60,7 @@ gulp.task('dev', function() {
       console.log(e);
     })
     return cb2;
+    //test
 
     // return gulp.src(['./src/**.js','./src/**/*.js'])
     //     .pipe(through2.obj(function (file,enc, cb) {
