@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <!--主容器id，定义myView配置的时候需要传入这个id -->
+    <div id="container"></div>
+    <!-- 用于modulejs引入以及显式定义所有用到的模块 -->
+    <script src="./common/module.js"></script>
+    <script type="text/javascript">
+        modulejs.config({
+            alias: {
+                "myView": "./common/myView.js",
+                'inf': "./common/inf.js",
+                'jquery': "./common/jquery.js",
+                'extender': "./extender.js",
+                'page1': "./dir/page1.js",
+                'page2': "./dir/page2.js"
+            }
+
+        });
+        /**
+         * [_mytouchConfig,myView的配置,参数见下面的解释]
+         * @type {Object}
+         */
+        var _mytouchConfig = {
+            "index": ['page1', 'first'], //当hash不存在的时候，默认请求的module和action,数组的第一项是module,第二项是action
+            "extender": 'extender', //view方法扩展器
+            "containerId": "container", //主容器id
+            "moduleActionMap": {
+                "module1": {
+                    "first": ['page1', 'first'],
+                    "second": ['page2', 'second']
+                } //action路由映射，可以给某些action设置别名
+            },
+            "modelRouteMap":{
+              "moduleTest":"page1"
+            } //module路由映射
+        }
+        modulejs('myView', function(m) {
+            m.init();
+        }); //按照modulejs规范，引入myView模块，然后调用myView的init方法来初始化
+    </script>
+</body>
+
+</html>
