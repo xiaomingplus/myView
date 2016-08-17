@@ -1,0 +1,47 @@
+//<script type="text/jsx">
+define('tpl_ex.guobao_test', function(require, exports, module) {
+    var _cacheThisModule_,
+        React = require('react'),
+        control = require('ex.guobao_test'),
+        reflux = require('reflux');
+
+    exports.app = function(container, actions, store, callback){
+      console.log('yes');
+
+        var Header = require('tpl_ex.guobao_test.header');
+
+        var App = React.createClass({
+          mixins:[reflux.connect(store)],
+        _onClick:function(){
+          actions.add({
+            name:"solin"
+          });
+        },
+        goPage : function(e){
+          control.second();
+        },
+        renderList:function(){
+          return this.state.list.map(function(v){
+            return (<div>{v.name}</div>);
+          })
+        },
+        render:function(){
+            return (<div>
+              <Header />
+             <div>页面1</div>
+
+              <button onClick={this._onClick}>点我有惊喜</button>
+              {this.renderList()}
+
+              <a data-hash="ex.guobao_test=second" data-pe="tap:view.gohash" >页面2</a>
+              </div>);
+        }
+
+        });
+
+        React.initializeTouchEvents(true);
+          React.render(<App />,container,callback);
+
+    }
+});
+//</script>

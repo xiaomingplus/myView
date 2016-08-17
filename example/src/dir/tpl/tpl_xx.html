@@ -1,0 +1,32 @@
+<script id="worldcup.rp.bottom" type="text/template">
+<div class="cpm-bets-toolbar"><div class="bd"><div class="cpm-btn-group">
+<!-- 默认状态 -->
+<!-- t -->
+{{ switch(it.type){
+    case 1:
+}}
+    <a pe="tap:_worldcup.rp.join" href="javascript:void(0);" hottag="LOT.TODAY.BUTTON.JOIN" class="cpm-btn cpm-btn-large cpm-btn-primary">确认支持该球队</a>
+{{
+    break;
+    case 2:
+}}
+    <a pe="tap:_worldcup.rp.share" href="javascript:void(0);" hottag="LOT.TODAY.BUTTON.SHARE" class="cpm-btn cpm-btn-large cpm-btn-primary">邀请好友一起来竞猜</a>
+{{
+    break;
+    case 3:
+}}
+
+{{
+    break;
+    case 4:
+}}
+
+{{
+    break;
+    default:
+
+    break;
+    }
+}}
+</div></div></div>
+</script>

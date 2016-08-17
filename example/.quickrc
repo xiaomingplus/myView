@@ -1,0 +1,8 @@
+{
+"livereload": {
+		"available": true,
+		//开启自动刷新
+		"port": 8080,
+		"startPath": "./index.html"
+	}
+	}

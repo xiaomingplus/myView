@@ -9,11 +9,19 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-preset-react": "^6.11.1",
+    "browser-sync": "^2.14.0",
+    "del": "^2.2.2",
     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-file": "^0.3.0",
+    "gulp-if": "^2.0.1",
+    "gulp-ignore-errors": "0.0.4",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "map-stream": "0.0.6",
+    "rc": "^1.1.6",
     "stream-combiner2": "^1.1.1",
     "through2": "^2.0.1"
   }
